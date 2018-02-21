@@ -9,4 +9,8 @@ class ApplicationController < Sinatra::Base
   	set :session_secret, "delicious-butter"
   end
 
+  get '/' do
+  	"Hello World!"
+  end
+
 end
