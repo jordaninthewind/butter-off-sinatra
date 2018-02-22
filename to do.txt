@@ -1,5 +1,5 @@
 to do --
 
+- Build out helpers to keep DRY
 - Add Boolean to Item as 'availability'
 - check for views route folder
-- Build out helpers to keep DRY
