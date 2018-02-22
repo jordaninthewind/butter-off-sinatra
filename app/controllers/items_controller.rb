@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   get '/items' do
 
 	if logged_in?
-		@user = User.find(session[:user_id])
+		@user = current_user
 
 		erb :'/items/index'
 	else
