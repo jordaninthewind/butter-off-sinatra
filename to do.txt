@@ -1,0 +1,4 @@
+to do --
+
+- Add Boolean to Item as 'availability'
+- check for views route folder
