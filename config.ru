@@ -9,5 +9,5 @@ use Rack::MethodOverride
 use SessionsController
 use UsersController
 use ItemsController
-
+use CommentsController
 run ApplicationController

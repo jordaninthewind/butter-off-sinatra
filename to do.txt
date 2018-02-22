@@ -3,6 +3,6 @@ to do --
 - Add Boolean to Item as 'availability'
 - Add Location to User for specificity
 - Update CRUD for all classes
-	- USER
-	- ITEM
-	- COMMENTS
+	X - USER
+	X - ITEM
+	  - COMMENTS

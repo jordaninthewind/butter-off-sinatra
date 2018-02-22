@@ -1,9 +1,21 @@
 <h4>Logged in as <%=@user.username%></h4>
+<h5><a href="/users/<%=@user.username%>">My Items</a> - <a href="/logout">Logout</a></h5>
 
-<h2><%=@item.name%> from <%=@item.user.username%></h2>
-<h4><a href="/users/<%=@user.username%>">My Items</a> - <a href="/logout">Logout</a></h4>
+<h2><%=@item.name%> from <a href="/users/<%=@item.user.username%>"><%=@item.user.username%></a></h2>
+<h4>Qty: <%=@item.quantity%></h4>
 
+<%if !@item.comments.empty?%>
+<h3>Comments: </h3>
 <%@item.comments.each do |c|%>
 
-<ul><li><%=c.quantity%> - <%=c.content%>, by <a href="/users/<%=c.user.username%>"><%=c.user.username%></a></li></ul>
+<ul><li><%=c.content%>, by <a href="/users/<%=c.user.username%>"><%=c.user.username%></a><p>Delete - Edit</p></li></ul>
+
 <%end%>
+<%end%>
+
+<h3>Add a Comment:</h3>
+	<form action="/comments/<%=@item.id%>/new" method="post">
+		<textarea name="comment" id="<%@item.id%>" cols="30" rows="5"></textarea>
+		<br>
+		<input type="submit" value="Submit">
+	</form>
