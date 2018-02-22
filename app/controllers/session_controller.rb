@@ -1,6 +1,9 @@
 class SessionController < ApplicationController
 
-	# login
+	get '/login' do
+	
+	  erb :'/users/login'
+	end
 
 	# logout
 
