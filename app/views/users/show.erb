@@ -1,0 +1,8 @@
+<h2><%=@user.username%></h2>
+
+<%@user.items.each do |i|%>
+<ul><li><%=i.name%></li></ul>
+<%end%>
+
+
+<h3><a href="/items">Home</a></h3>

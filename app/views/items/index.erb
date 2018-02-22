@@ -1,7 +1,6 @@
 <h4>Welcome, <%=@user.username%> - <a href="/logout">Logout</a></h4>
 
 <h2>All Items Available</h2>
-
 <% Item.all.each do |i| %>
 <ul>
 	<li><%=i.name%>, Quantity: <%=i.quantity%>, from <%=i.user.username%></li>
