@@ -1,0 +1,8 @@
+<h2>Edit <%=@item.name%>, <%=@user.username%>!</h2>
+
+<form action="/items/<%=@item.id%>/edit" method="post">
+	<input type="hidden" method="_method" value="patch">
+		<p>Item: <input type="text" name="item[name]" value="<%=@item.name%>"></p>
+		<p>Qty: <input type="number" name="item[quantity]" value="<%=@item.quantity%>"></p>
+	<input type="submit" value="Update Item">
+</form>

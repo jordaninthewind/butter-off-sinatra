@@ -1,13 +1,14 @@
 class ItemsController < ApplicationController
 
   get '/items' do
-	if logged_in?
-	  @user = current_user
+  	if logged_in?
+  	  @user = current_user
 
-	  erb :'/items/index'
-	else
+  	  erb :'/items/index'
+  	else
 
-	  redirect to '/'
+  	  redirect to '/'
+    end
   end
 
   get '/items/new' do
@@ -37,15 +38,20 @@ class ItemsController < ApplicationController
 
   get '/items/:id/edit' do
     @item = Item.find(params[:id])
+    @user = current_user
 
-    erb :'/items/edit'
+    if @item.user_id == @user.id
+
+      erb :'/items/edit'
+    else
+      redirect to '/items'
+    end
   end
 
   post '/items/:id/edit' do
     @item = Item.find(params[:id])
     @item.update(params[:item])
 
-    redirect to "/show/#{@item.id}"
+    redirect to "/items/#{@item.id}"
   end
-
 end
