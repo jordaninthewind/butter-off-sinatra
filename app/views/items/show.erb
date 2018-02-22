@@ -1,0 +1,6 @@
+<h2><%=@item.name%></h2>
+
+<%@item.comments.each do |c|%>
+<%binding.pry%>
+<ul><li><%=c.content%>, by <%=c.user.username%></li></ul>
+<%end%>

@@ -29,4 +29,10 @@ class ItemsController < ApplicationController
   	redirect to '/items'
   end
 
+  get '/items/:id' do
+  	@item = Item.find(params[:id])
+
+  	erb :'/items/show'
+  end
+
 end
