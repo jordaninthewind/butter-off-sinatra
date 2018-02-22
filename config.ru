@@ -6,7 +6,8 @@ end
 
 use Rack::MethodOverride
 # use Rack::Session::Cookie
-use SessionController
-use UserController
+use SessionsController
+use UsersController
+use ItemsController
 
 run ApplicationController

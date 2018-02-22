@@ -1,0 +1,7 @@
+<h1>All Items Available</h1>
+
+<% Item.all.each do |i| %>
+<ul>
+	<li><%=i.name%>, Quantity: <%=i.quantity%>, from <%=i.user.username%></li>
+</ul>
+<%end%>
