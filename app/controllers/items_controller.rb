@@ -27,11 +27,12 @@ class ItemsController < ApplicationController
   	@item.user = current_user
   	@item.save
 
-  	redirect to '/items'
+  	redirect to '/'
   end
 
   get '/items/:id' do
   	@item = Item.find(params[:id])
+    @user = current_user
 
   	erb :'/items/show'
   end
@@ -44,7 +45,7 @@ class ItemsController < ApplicationController
 
       erb :'/items/edit'
     else
-      redirect to '/items'
+      redirect to '/'
     end
   end
 
@@ -53,5 +54,25 @@ class ItemsController < ApplicationController
     @item.update(params[:item])
 
     redirect to "/items/#{@item.id}"
+  end
+
+  get '/items/:id/delete' do
+    @item = Item.find(params[:id])
+    @user = current_user
+
+    if @item.user_id == @user.id
+    
+      erb :'/items/delete'
+    else
+
+      redirect to '/'
+    end
+  end
+
+  post '/items/:id/delete' do
+    @item = Item.find(params[:id])
+    @item.destroy
+
+    redirect to '/'
   end
 end

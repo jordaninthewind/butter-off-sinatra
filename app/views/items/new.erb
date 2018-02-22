@@ -1,4 +1,6 @@
-<h2>Add Something to Your Box, <%=@user.username%>!</h2>
+<h4>Logged in as <%=@user.username%></h4>
+
+<h2>Add Something to Your Box!</h2>
 <h4><a href="/users/<%=@user.username%>">My Items</a> - <a href="/logout">Logout</a></h4>
 
 <form action="/items/new" method="post">
