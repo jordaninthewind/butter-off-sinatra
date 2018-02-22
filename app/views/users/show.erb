@@ -1,8 +1,7 @@
-<h2><%=@user.username%></h2>
+<h3><%=@user.username%> - <a href="/items">Home</a></h3>
+<h4><a href="/items/new">Make New Item</a></h4>
+
 
 <%@user.items.each do |i|%>
-<ul><li><%=i.name%></li></ul>
+<ul><li><%=i.name%>, Qty. <%=i.quantity%></li></ul>
 <%end%>
-
-
-<h3><a href="/items">Home</a></h3>
