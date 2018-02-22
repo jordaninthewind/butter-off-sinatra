@@ -8,11 +8,11 @@ class ItemsController < ApplicationController
 	else
 
 	  redirect to '/'
-	end
   end
 
   get '/items/new' do
   	if logged_in?
+      @user = current_user
 
   	  erb :'/items/new'
   	else
@@ -33,6 +33,19 @@ class ItemsController < ApplicationController
   	@item = Item.find(params[:id])
 
   	erb :'/items/show'
+  end
+
+  get '/items/:id/edit' do
+    @item = Item.find(params[:id])
+
+    erb :'/items/edit'
+  end
+
+  post '/items/:id/edit' do
+    @item = Item.find(params[:id])
+    @item.update(params[:item])
+
+    redirect to "/show/#{@item.id}"
   end
 
 end
