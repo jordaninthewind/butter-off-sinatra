@@ -1,5 +1,4 @@
-module Butter
-  module Off
+module ButterOff
     VERSION = "0.1.0"
   end
 end

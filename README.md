@@ -1,11 +1,15 @@
-# Butter::Off
+# ButterOff
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/butter/off`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+ButterOff is a way to help people be better off by not throwing away food or household items. If you have more butter than you need because you bought a 10kg. pack at some large box store, add it here, share, and help others be ButterOff!
 
 ## Installation
 
+Fork and clone repository.
+
+Run 'bundle install' while in directory.
+
+Run 'shotgun' to access on localhost:9393
+<!-- 
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -19,10 +23,12 @@ And then execute:
 Or install it yourself as:
 
     $ gem install butter-off
-
+ -->
 ## Usage
 
-TODO: Write usage instructions here
+This is a simple sinatra MVC webapp to provide a place to share common household goods.
+
+Register any items you might have in your house that need to be used before they expire, or that you feel like would be better used by being shared with others.
 
 ## Development
 
