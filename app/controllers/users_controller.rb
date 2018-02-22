@@ -7,9 +7,14 @@ class UsersController < ApplicationController
 
 	post '/signup' do
 	  @user = User.create(params[:user])
-	  session[:user_id] = @user.id
+	  if !!@user
+	  	session[:user_id] = @user.id
 
-	  redirect to '/items'
+	  	redirect to '/items'
+	  else
+
+	  	redirect to '/'
+	  end
 	end
 
 	get '/users/:slug' do
@@ -18,4 +23,41 @@ class UsersController < ApplicationController
 	  erb :'/users/show'
 	end
 
+	get '/users/:slug/edit' do
+	  @user = User.find_by_slug(params[:slug])
+
+	  erb :'/users/edit'
+	end
+
+	# post '/users/:slug/edit' do # TO FIX SOONEST
+	#   @user = User.find_by_slug(params[:slug])
+	#   @user.update(:)
+	# end
+
+	get '/users/:slug/delete' do
+		@user = User.find_by_slug(params[:slug])
+		# binding.pry
+		if @user.id == session[:user_id]
+
+		  erb :'/users/delete'
+		else
+
+		  redirect to '/items'
+		end
+	end
+
+	post '/users/:slug/delete' do
+	  if params[:delete] == "DELETE" && logged_in?
+	  	binding.pry
+		@user = User.find_by_slug(params[:slug])
+		@user.items.destroy_all
+		@user.comments.destroy_all
+		@user.destroy
+
+		redirect to '/'
+	  else
+
+	  	redirect to '/items'
+	  end
+	end
 end

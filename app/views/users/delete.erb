@@ -1,0 +1,11 @@
+<h1>Delete User</h1>
+
+<p>ARE YOU SURE YOU WANT TO DELETE YOUR ACCOUNT?</p>
+<p>All data associated with your account will be destroyed.</p>
+<form action="/users/<%=@user.username%>/delete" method="post">
+	<input type="hidden" method="_method" value="delete">
+	<p>Type DELETE in the box:<input type="text" name="delete"></p>
+	<input type="submit" value="Delete Account">	
+</form>
+<br>
+<p>Or return to <a href="/items">Home</a></p>

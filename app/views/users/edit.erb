@@ -1,0 +1,12 @@
+<h2>Edit Your Account</h2>
+
+<form action="/users/<%=@user.username%>/edit" method="post">
+	<input type="hidden" method="_method" value="patch">
+	<p>Username: <input type="text" name="user[username]" value="<%=@user.username%>"></p>
+	<p>E-mail: <input type="text" name="user[email]" value="<%=@user.email%>"></p>
+	<input type="hidden" name="user[password]" value="<%=@user.password%>">
+	<!-- add location -->
+	<input type="submit" value="Update User Information">
+</form>
+
+Or <a href="/users/<%=@user.username%>/delete">delete</a> your account.
