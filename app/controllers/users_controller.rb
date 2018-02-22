@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
-	# userview
+	get '/signup' do
+		
+		erb :'/users/new'
+	end
 
 end
