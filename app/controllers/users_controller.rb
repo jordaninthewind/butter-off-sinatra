@@ -7,14 +7,14 @@ class UsersController < ApplicationController
 
 	post '/signup' do
 	  @user = User.create(params[:user])
-	  
+
 	  if !!@user
 	  	session[:user_id] = @user.id
+	  end
+	  # 	redirect to '/items'
+	  # else
 
-	  	redirect to '/items'
-	  else
-
-	  	redirect to '/'
+	    redirect to '/'
 	  end
 	end
 
@@ -37,28 +37,24 @@ class UsersController < ApplicationController
 
 	get '/users/:slug/delete' do
 		@user = User.find_by_slug(params[:slug])
-		# binding.pry
 		if @user.id == session[:user_id]
 
 		  erb :'/users/delete'
 		else
 
-		  redirect to '/items'
+		  redirect to '/'
 		end
 	end
 
 	post '/users/:slug/delete' do
 	  if params[:delete] == "DELETE" && logged_in?
-	  	binding.pry
 		@user = User.find_by_slug(params[:slug])
 		@user.items.destroy_all
 		@user.comments.destroy_all
 		@user.destroy
+	  end
 
 		redirect to '/'
-	  else
-
-	  	redirect to '/items'
 	  end
 	end
 end

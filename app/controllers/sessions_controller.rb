@@ -9,17 +9,13 @@ class SessionsController < ApplicationController
 	  @user = User.find_by(:username => params[:user][:username])
 	  if @user.authenticate(params[:user][:password])
 	  	session[:user_id] = @user.id
+	  end
 
-	    redirect to '/items'
-	  else
-
-	    redirect to '/'
-  	  end
+	  redirect to '/'
 	end
 
 	get '/logout' do
-	  # binding.pry
-	  session = {}
+	  session.clear
 
 	  redirect to '/'
 	end
