@@ -1,10 +1,10 @@
 to do --
 
 - Add Boolean to Item as 'availability'
-- Update CRUD for all classes
+XXX - Update CRUD for all classes
 	X - USER
 	X - ITEM
-	  - COMMENTS
+	X - COMMENTS
 - Add .find_or_create_by_name dryness?
 
 - Add location class or just location to User class?
