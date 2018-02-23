@@ -6,3 +6,7 @@ to do --
 	X - USER
 	X - ITEM
 	  - COMMENTS
+- Add .find_or_create_by_name dryness?
+
+- Add location class?
+	- A location has_many users

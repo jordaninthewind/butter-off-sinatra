@@ -23,8 +23,13 @@ class UsersController < ApplicationController
 
 	get '/users/:slug/edit' do
 	  @user = User.find_by_slug(params[:slug])
+	  if @user.id == session[:user_id]
 
-	  erb :'/users/edit'
+	  	erb :'/users/edit'
+	  else
+
+	  	redirect to '/'
+	  end
 	end
 
 	post '/users/:slug/edit' do
