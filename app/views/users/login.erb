@@ -1,7 +1,11 @@
 <h2>Log In to ButterOff</h2>
 
 <form action="/login" method="post">
-	<p>Username: <input type="text" name="user[username]"></p>
+	<%User.all.each do |u|%>
+	<p><input type="radio" name="user[username]" value="<%=u.username%>"><%=u.username%></p>
+	<%end%>
 	<p>Password: <input type="password" name="user[password]"></p>
 	<input type="submit" value="Log In">
 </form>
+
+<h3>Or Make <a href="/signup">New User</a></h3>

@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
 	end
 
 	get '/logout' do
+	  # binding.pry
 	  session = {}
 
 	  redirect to '/'

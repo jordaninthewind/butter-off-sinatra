@@ -5,6 +5,6 @@
 <h2>Add Something to Your Box!</h2>
 <form action="/items/new" method="post">
 	<p>Item: <input type="text" name="item[name]"></p>
-	<p>Qty: <input type="number" name="item[quantity]"></p>
+	<p>Qty: <input type="number" min="1" name="item[quantity]"></p>
 	<input type="submit" value="Add Item">
 </form>

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
 	post '/signup' do
 	  @user = User.create(params[:user])
+	  
 	  if !!@user
 	  	session[:user_id] = @user.id
 
