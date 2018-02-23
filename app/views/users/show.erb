@@ -1,11 +1,9 @@
 <h4>Logged in as <%=@user.username%></h4>
 <h5><a href="/">Home</a> - <a href="/users/<%=@user.username%>">My Items</a> - <a href="/logout">Logout</a></h5>
 
-<%if current_user == @user%><h4><a href="/users/<%=@user.username%>/edit">Update User</a></h4><%end%>
+<%if current_user == @user%><h4><a href="/users/<%=@user.username%>/edit">Update User</a> - <a href="/items/new">Add Item</a></h4><%end%>
 
-<%if current_user == @user%><h4><a href="/items/new">Make New Item</a></h4><%end%>
-
-<h3>Everything Available from <%=@user.username%></h3>
+<h3>Everything Available from <%<%=@user.username%></h3>
 <%@user.items.each do |i|%>
 <ul>
 	<li>
