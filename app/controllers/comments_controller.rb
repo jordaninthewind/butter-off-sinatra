@@ -33,7 +33,28 @@ class CommentsController < ApplicationController
 	end
 
 	post '/comments/:id/edit' do
-		binding.pry
+		@comment = Comment.find(params[:id])
+		@comment.update(:content => params[:content])
 
+		redirect to "/items/#{@comment.item.id}"
+	end
+
+	get '/comments/:id/delete' do
+	  @comment = Comment.find(params[:id])
+	  if @comment.user == current_user
+
+	  	erb :'/comments/delete'
+	  else
+
+	  	redirect to "/items/#{@comment.item.id}"
+	  end
+	end
+
+	post '/comments/:id/delete' do
+	  @comment = Comment.find(params[:id])
+	  @item = @comment.item
+	  @comment.destroy
+
+	  redirect to "/items/#{@item.id}"
 	end
 end

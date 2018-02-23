@@ -3,7 +3,7 @@
 
 <h1>Update Comment for <%=@comment.item.name%></h1>
 
-<form action="/comments/:id/edit" method="post">
+<form action="/comments/<%=@comment.id%>/edit" method="post">
 	<input type="hidden" method="_method" value="patch">
 	<textarea name="content" cols="30" rows="5"><%=@comment.content%></textarea>
 	<input type="submit" value="Update">

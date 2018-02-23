@@ -1,0 +1,10 @@
+<h2>Delete Comment</h2>
+
+<h4>Confirm Deletion</h4>
+
+<p><%=@comment.content%></p>
+
+<form action="/comments/<%=@comment.id%>/delete" method="post">
+	<input type="hidden" method="_method" value="delete">
+	<input type="submit" value="Delete">
+</form>
