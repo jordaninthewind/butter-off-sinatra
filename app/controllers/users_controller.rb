@@ -11,11 +11,8 @@ class UsersController < ApplicationController
 	  if !!@user
 	  	session[:user_id] = @user.id
 	  end
-	  # 	redirect to '/items'
-	  # else
 
 	    redirect to '/'
-	  end
 	end
 
 	get '/users/:slug' do
@@ -30,20 +27,22 @@ class UsersController < ApplicationController
 	  erb :'/users/edit'
 	end
 
-	# post '/users/:slug/edit' do # TO FIX SOONEST
-	#   @user = User.find_by_slug(params[:slug])
-	#   @user.update(:)
-	# end
+	post '/users/:slug/edit' do
+	  @user = User.find_by_slug(params[:slug])
+	  @user.update(params[:user])
+
+	  redirect to "/users/#{@user.username}"
+	end
 
 	get '/users/:slug/delete' do
-		@user = User.find_by_slug(params[:slug])
-		if @user.id == session[:user_id]
+	  @user = User.find_by_slug(params[:slug])
+	  if @user.id == session[:user_id]
 
-		  erb :'/users/delete'
-		else
+		erb :'/users/delete'
+	  else
 
-		  redirect to '/'
-		end
+		redirect to '/'
+	  end
 	end
 
 	post '/users/:slug/delete' do
@@ -55,6 +54,5 @@ class UsersController < ApplicationController
 	  end
 
 		redirect to '/'
-	  end
 	end
 end
