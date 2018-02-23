@@ -9,3 +9,5 @@ to do --
 
 - Add location class or just location to User class?
 	- A location has_many users
+
+- Add update to comment id when item updated
