@@ -1,13 +1,12 @@
 to do --
 
-- Add Boolean to Item as 'availability'
-XXX - Update CRUD for all classes
-	X - USER
-	X - ITEM
-	X - COMMENTS
 - Add .find_or_create_by_name dryness?
 
 - Add location class or just location to User class?
 	- A location has_many users
 
 - Add update to comment id when item updated
+
+- Add better error messages
+
+- Add a few tests?

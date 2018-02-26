@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
   get '/' do
     if logged_in?
   	  
-      redirect to '/items'
+      erb :'/items/index'
     else
 
       erb :'/index'
