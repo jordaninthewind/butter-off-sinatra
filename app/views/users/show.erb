@@ -3,7 +3,7 @@
 
 <%if current_user == @user%><h4><a href="/users/<%=@user.username%>/edit">Update User</a> - <a href="/items/new">Add Item</a></h4><%end%>
 
-<h3>Everything Available from <%=@user.username%></h3>
+<h3>Everything Available from <%=@user.username%> in <%=@user.location%></h3>
 
 <%@user.items.each do |i|%>
 <ul><li>
