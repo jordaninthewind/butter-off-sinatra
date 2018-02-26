@@ -45,6 +45,7 @@ class ItemsController < ApplicationController
 
       erb :'/items/edit'
     else
+      
       redirect to '/'
     end
   end
