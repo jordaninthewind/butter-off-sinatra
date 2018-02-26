@@ -45,12 +45,12 @@ class ItemsController < ApplicationController
 
       erb :'/items/edit'
     else
-      
+
       redirect to '/'
     end
   end
 
-  post '/items/:id/edit' do
+  patch '/items/:id/edit' do
     @item = Item.find(params[:id])
     @item.update(params[:item])
 
@@ -70,7 +70,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  post '/items/:id/delete' do
+  delete '/items/:id/delete' do
     @item = Item.find(params[:id])
     @item.destroy
 

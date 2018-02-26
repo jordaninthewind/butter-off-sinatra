@@ -4,7 +4,7 @@
 <h2>Edit Item</h2>
 
 <form action="/items/<%=@item.id%>/edit" method="post">
-	<input type="hidden" method="_method" value="patch">
+	<input type="hidden" name="_method" value="patch">
 		<p>Item: <input type="text" name="item[name]" value="<%=@item.name%>"></p>
 		<p>Qty: <input type="number" min="1" name="item[quantity]" value="<%=@item.quantity%>"></p>
 	<input type="submit" value="Update Item">

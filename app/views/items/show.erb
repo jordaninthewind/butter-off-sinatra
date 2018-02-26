@@ -2,9 +2,12 @@
 <h5><a href="/">Home</a> - <a href="/users/<%=current_user.username%>">My Items</a> - <a href="/logout">Logout</a></h5>
 
 <h2><%=@item.name%> from <a href="/users/<%=@item.user.username%>"><%=@item.user.username%></a></h2>
-<h4>Qty: <%=@item.quantity%></h4>
+<%if @item.user == current_user %> <h4> <a href="/items/<%=@item.id%>/delete">Delete Item</a></h4><%end%>
+
+<h3>Qty: <%=@item.quantity%></h3>
 <h5>Item Location: <%=@item.user.location%></h5>
 <h5><a href="mailto:<%=@item.user.email%>">Contact</a></h5>
+
 <%if !@item.comments.empty?%>
 
 <h3>Comments: </h3>

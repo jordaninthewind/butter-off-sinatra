@@ -5,6 +5,6 @@
 
 <% Item.all.each do |i| %>
 <ul>
-<li><a href="/items/<%=i.id%>"><%=i.name%></a>, Quantity: <%=i.quantity%>, from <a href="/users/<%=i.user.username%>"><%=i.user.username%></a></li>
+<li><a href="/items/<%=i.id%>"><%=i.name%></a>, Quantity: <%=i.quantity%>, from <a href="/users/<%=i.user.username%>"><%=i.user.username%></a> in <%=i.user.location%></li>
 </ul>
 <%end%>

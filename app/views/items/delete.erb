@@ -4,6 +4,6 @@
 <h4>Click to Confirm</h4>
 
 <form action="/items/<%=@item.id%>/delete" method="post">
-	<input type="hidden" method="_method" value="delete">
+	<input type="hidden" name="_method" value="delete">
 	<input type="submit" value="Delete <%=@item.name%>">
 </form>
