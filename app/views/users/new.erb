@@ -3,7 +3,10 @@
 <form action="/signup" method="post">
 	<p>Username: <input type="text" name="user[username]"></p>
 	<p>Password: <input type="password" name="user[password]"></p>
-	<p>Location: <input type="text" name="user[location]" value="Required"></p>
 	<p>E-mail: <input type="text" name="user[email]" value="Required"></p>
+	<h3>Choose a Location:</h3>
+		<%Location.all.each do |l|%>
+			<p><input type="radio" name="user[location_id]" value="<%=l.id%>"><%=l.name%></p>
+		<%end%>
 	<input type="submit" value="Create User">
 </form>

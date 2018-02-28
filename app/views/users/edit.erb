@@ -7,7 +7,11 @@
 	<input type="hidden" method="_method" value="patch">
 	<p>Username: <input type="text" name="user[username]" value="<%=@user.username%>"></p>
 	<p>E-mail: <input type="text" name="user[email]" value="<%=@user.email%>"></p>
-	<p>Location: <input type="text" name="user[location]" value="<%=@user.location%>"></p>
+	
+	<p>Location:</p> 
+		<%Location.all.each do |l|%>
+		<p><input type="radio" name="user[location_id]" value="<%=l.id%>"><%=l.name%></p>
+		<%end%>
 	<input type="submit" value="Update User Information">
 </form>
 

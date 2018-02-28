@@ -6,7 +6,8 @@
 <h4>All Existing Locations:</h4>
 <%Location.all.each do |l|%>
 	<ul>
-		<li><%=l.name%></li>
+		<%binding.pry%>
+		<li><a href="/locations/<%=l.name%>"><%=l.name%></a></li>
 	</ul>
 <%end%>
 

@@ -15,6 +15,4 @@
 
 	- Add join table for location has_many items through users
 
-	- Add slug for location
-
 	- Add location to User signup
