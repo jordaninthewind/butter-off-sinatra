@@ -1,11 +1,20 @@
-to do --
+	to do --
 
-- Add update to comment id when item updated
+	- Add update to comment id when item updated
 
-- Add better error messages
+	- Add better error messages
 
-- Add a few tests?
+	- Add a few tests?
 
-- Add better error handling with messages
+	- Add better error handling with messages
 
-- Add location
+	- Add CRUD functions to location as a class
+		- Show Users by Location
+		- Show Items by Location
+		- Change edit location for user to show available options or make new location
+
+	- Add join table for location has_many items through users
+
+	- Add slug for location
+
+	- Add location to User signup
