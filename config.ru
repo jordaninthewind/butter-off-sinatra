@@ -5,7 +5,8 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use Rack::MethodOverride
-# use Rack::Session::Cookie
+
+use LocationsController
 use SessionsController
 use UsersController
 use ItemsController

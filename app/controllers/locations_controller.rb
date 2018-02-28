@@ -1,8 +1,9 @@
 class LocationsController < ApplicationController
 
-	get '/location' do
+	get '/locations' do
+		@locations = Location.all
 
-
+		erb :'/locations/index'
 	end
 
 
