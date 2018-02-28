@@ -9,9 +9,14 @@ class SessionsController < ApplicationController
 	  @user = User.find_by(:username => params[:user][:username])
 	  if @user.authenticate(params[:user][:password])
 	  	session[:user_id] = @user.id
+	  	
+	  	redirect to '/'
+	  else
+
+	  	erb :'/users/login'
 	  end
 
-	  redirect to '/'
+	  
 	end
 
 	get '/logout' do
