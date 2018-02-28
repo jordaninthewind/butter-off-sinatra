@@ -1,3 +1,6 @@
+<h4>Logged in as <%=current_user.username%></h4>
+<h5><a href="/">Home</a> - <a href="/users/<%=current_user.username%>">My Items</a> - <a href="/logout">Logout</a></h5>
+
 <h2>Locations</h2>
 
 <%Location.all.each do |l|%>
