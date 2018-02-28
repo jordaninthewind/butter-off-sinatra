@@ -22,4 +22,6 @@ class LocationsController < ApplicationController
 		erb :"/locations/show"
 	end
 
+	
+
 end

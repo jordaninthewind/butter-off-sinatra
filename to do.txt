@@ -16,3 +16,5 @@
 	- Add join table for location has_many items through users
 
 	- Add location to User signup
+
+	- Add timestamp to Items

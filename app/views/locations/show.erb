@@ -1,11 +1,10 @@
 <h4>Logged in as <%=current_user.username%></h4>
 <h5><a href="/">Home</a> - <a href="/users/<%=current_user.username%>">My Items</a> - <a href="/logout">Logout</a></h5>
 
-Location:
 <h2><%=@location.name%></h2>
 
-<%@location.items.each do |li|%>
 <ul>
-	<li><%=li.name%> from <a href="/users/<%=li.user.username%>"><%=li.user.username%></a></li>
+	<%@location.items.each do |li|%>
+		<li><%=li.name%> from <a href="/users/<%=li.user.username%>"><%=li.user.username%></a></li>
+	<%end%>
 </ul>
-<%end%>
