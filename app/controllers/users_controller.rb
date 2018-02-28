@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 	end
 
 	post '/signup' do
-	  binding.pry
 	  @user = User.create(params[:user])
 
 	  if !!@user

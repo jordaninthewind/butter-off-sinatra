@@ -10,7 +10,7 @@
 	
 	<p>Location:</p> 
 		<%Location.all.each do |l|%>
-		<p><input type="radio" name="user[location_id]" value="<%=l.id%>"><%=l.name%></p>
+		<p><input type="radio" name="user[location_id]" value="<%=l.id%>" checked if <%@user.location_id == l.id%>><%=l.name%></p>
 		<%end%>
 	<input type="submit" value="Update User Information">
 </form>

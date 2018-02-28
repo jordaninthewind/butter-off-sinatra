@@ -10,10 +10,12 @@
 </ul>
 <%end%>
 <br>
-<h2>All Items Available Everywhere</h2>
+<h2>All Items Available Elsewhere</h2>
 
 <% Item.all.each do |i| %>
 <ul>
+<%if i.user.location != current_user.location%>
 <li><a href="/items/<%=i.id%>"><%=i.name%></a>, Quantity: <%=i.quantity%>, from <a href="/users/<%=i.user.username%>"><%=i.user.username%></a> in <%=i.user.location.name%></li>
+<%end%>
 </ul>
 <%end%>
