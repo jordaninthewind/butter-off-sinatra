@@ -9,14 +9,15 @@ class SessionsController < ApplicationController
 	  @user = User.find_by(:username => params[:user][:username])
 	  if @user.authenticate(params[:user][:password])
 	  	session[:user_id] = @user.id
-	  	
+	  	session[:login_message] = nil
+
 	  	redirect to '/'
 	  else
+	  	
+	  	session[:login_message] = "Incorrect Login Information, Please Try Again"
 
 	  	erb :'/users/login'
-	  end
-
-	  
+	  end	  
 	end
 
 	get '/logout' do

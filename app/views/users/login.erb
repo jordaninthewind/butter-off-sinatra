@@ -1,5 +1,7 @@
+<style> h3 {color: red;} </style>
 <h2>Log In to ButterOff</h2>
 
+<%if session[:login_message] != nil%> <h3> <%=session[:login_message]%> </h3> <%end%>
 <h4>Choose a User:</h4>
 <form action="/login" method="post">
 	<%User.all.each do |u|%>

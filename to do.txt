@@ -1,20 +1,16 @@
-	to do --
+	to do --	
 
-	- Add update to comment id when item updated
+	- Add timestamp to Items
 
-	- Add better error messages
+	- Re-record walkthrough
 
-	- Add a few tests?
+	- Update Blog Post in Learn Mag about adding Location class after build
 
-	- Add better error handling with messages
-
+UPDATED
+	- Add location to User signup
+	- Add join table for location has_many items through users
 	- Add CRUD functions to location as a class
 		- Show Users by Location
 		- Show Items by Location
 		- Change edit location for user to show available options or make new location
-
-	- Add join table for location has_many items through users
-
-	- Add location to User signup
-
-	- Add timestamp to Items
+	- Add better error handling with messages	

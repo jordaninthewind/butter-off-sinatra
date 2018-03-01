@@ -5,19 +5,17 @@
 <%if @item.user == current_user %> <h4> <a href="/items/<%=@item.id%>/delete">Delete Item</a></h4><%end%>
 
 <h3>Qty: <%=@item.quantity%></h3>
-<h5>Item Location: <%=@item.user.location%></h5>
-<h5><a href="mailto:<%=@item.user.email%>">Contact</a></h5>
+<h5>Item Location: <%=@item.user.location.name%></h5>
+<h5><a href="mailto:<%=@item.user.email%>">Contact Sharer</a></h5>
 
 <%if !@item.comments.empty?%>
 
 <h3>Comments: </h3>
 <%@item.comments.each do |c|%>
 <%if session[:message]%> <p> <style>p {color:red;}</style> <%=session[:message]%></p><%end%>
-<ul><li><%=c.content%>, by <a href="/users/<%=c.user.username%>"><%=c.user.username%></a> in <%=c.user.location%>
+<ul><li><%=c.content%>, by <a href="/users/<%=c.user.username%>"><%=c.user.username%></a> in <%=c.user.location.name%>
 <%if c.user == current_user %><p><a href="/comments/<%=c.id%>/delete">Delete</a> - <a href="/comments/<%=c.id%>/edit">Edit</a></p><%end%></li></ul>
-
-<%end%>
-<%end%>
+<%end%><%end%>
 
 <h3>Add a Comment:</h3>
 	<form action="/comments/<%=@item.id%>/new" method="post">
