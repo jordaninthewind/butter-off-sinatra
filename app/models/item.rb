@@ -3,4 +3,8 @@ class Item < ActiveRecord::Base
 	has_many :comments
 	validates_presence_of :name, :quantity
 
+	def created_time
+		self.created_at.strftime("Offered on %m/%d/%Y at %H:%M")
+	end
+
 end

@@ -1,3 +1,4 @@
+<style>div {font-weight: bold; font-size: .75em;}</style>
 <h4>Logged in as <%=current_user.username%> - <a href="/logout">Logout</a></h4>
 <h5><a href="/">Home</a> - <a href="/users/<%=current_user.username%>">My Items</a><%if current_user == @user%> - <a href="/items/new">Add Item</a></h5>
 
@@ -8,6 +9,7 @@
 <%@user.items.each do |i|%>
 <ul><li>
 	Qty. <%=i.quantity%>, <a href="/items/<%=i.id%>"><%=i.name%></a>
-	<%if current_user == @user%>- <span><a href="/items/<%=i.id%>/delete">Delete</a> or <a href="/items/<%=i.id%>/edit">Edit</a></span><%end%>
+	<div><%=i.created_time%></div>
+	<%if current_user == @user%><div><a href="/items/<%=i.id%>/delete">Delete</a> or <a href="/items/<%=i.id%>/edit">Edit</a></div><%end%>
 </li></ul>
 <%end%>
