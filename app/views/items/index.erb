@@ -4,7 +4,7 @@
 <br>
 <h2>All Items Available in Your City -- (<%=current_user.location.name%>)</h2>
 
-<% current_user.location.items.each do |i| %>
+<% current_user.location.items.reverse.each do |i| %>
 <ul>
 <li><a href="/items/<%=i.id%>"><%=i.name%></a>, Quantity: <%=i.quantity%>, from <a href="/users/<%=i.user.username%>"><%=i.user.username%></a></li>
 </ul>

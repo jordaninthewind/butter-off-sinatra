@@ -1,8 +1,8 @@
-<style> h3 {color: red;} </style>
+<style> span {color: red;} </style>
 <h2>Log In to ButterOff</h2>
 
-<%if session[:login_message] != nil%> <h3> <%=session[:login_message]%> </h3> <%end%>
-<h4>Choose a User:</h4>
+<%if session[:message] != nil%> <h3> <span><%=session[:message]%></span> </h3> <%end%>
+<h3>Choose a User:</h3>
 <form action="/login" method="post">
 	<%User.all.each do |u|%>
 	<input type="radio" name="user[username]" value="<%=u.username%>"><%=u.username%>
@@ -11,4 +11,4 @@
 	<input type="submit" value="Log In">
 </form>
 
-<h3>Or Make a <a href="/signup">New User</a></h3>
+<h2>Or Make a <a href="/signup">New User</a></h2>

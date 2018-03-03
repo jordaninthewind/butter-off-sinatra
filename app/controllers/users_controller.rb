@@ -56,6 +56,7 @@ class UsersController < ApplicationController
 		@user.items.destroy_all
 		@user.comments.destroy_all
 		@user.destroy
+		session.clear
 	  end
 
 		redirect to '/'
