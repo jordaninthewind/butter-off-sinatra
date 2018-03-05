@@ -1,11 +1,3 @@
-	to do --	
-
-	- Add timestamp to Items
-
-	- Re-record walkthrough
-
-	- Update Blog Post in Learn Mag about adding Location class after build
-
 UPDATED
 	- Add location to User signup
 	- Add join table for location has_many items through users
@@ -14,3 +6,6 @@ UPDATED
 		- Show Items by Location
 		- Change edit location for user to show available options or make new location
 	- Add better error handling with messages	
+	- Add timestamp to Items
+	- Re-record walkthrough
+	- Update Blog Post in Learn Mag about adding Location class after build

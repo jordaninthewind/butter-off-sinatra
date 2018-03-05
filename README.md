@@ -8,22 +8,8 @@ Fork and clone repository.
 
 Run 'bundle install' while in directory.
 
-Run 'shotgun' to access on localhost:9393
-<!-- 
-Add this line to your application's Gemfile:
+Run 'shotgun' to access on localhost:9393.
 
-```ruby
-gem 'butter-off'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install butter-off
- -->
 ## Usage
 
 This is a simple sinatra MVC webapp to provide a place to share common household goods.
@@ -32,9 +18,7 @@ Register any items you might have in your house that need to be used before they
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Follow 'Usage' instructions to view app interactivity. The gemfile includes Tux, which allows for direct access to the database. For access, in app directory after migrations, type 'tux' to interact directly with database.
 
 ## Contributing
 
