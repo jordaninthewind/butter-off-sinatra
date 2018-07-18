@@ -52,9 +52,15 @@ class ItemsController < ApplicationController
 
   patch '/items/:id/edit' do
     @item = Item.find(params[:id])
-    @item.update(params[:item])
 
-    redirect to "/items/#{@item.id}"
+    if current_user == @item.user
+      @item.update(params[:item])
+
+      redirect to "/items/#{@item.id}"
+    else
+
+      redirect to '/'
+    end
   end
 
   get '/items/:id/delete' do

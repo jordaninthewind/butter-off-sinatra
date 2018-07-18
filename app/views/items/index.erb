@@ -16,11 +16,10 @@
 
 <% Item.all.reverse.each do |i| %>
 
-<ul>
-
-	<%if i.user.location != current_user.location%>
-	<li><a href="/items/<%=i.id%>"><%=i.name%></a>, Quy: <%=i.quantity%>, from <a href="/users/<%=i.user.username%>"><%=i.user.username%></a> in <%=i.user.location.name%></li>
-	<div><%=i.created_time%></div>
-	<%end%>
+	<ul>
+		<%if i.user.location != current_user.location%>
+		<li><a href="/items/<%=i.id%>"><%=i.name%></a>, Quy: <%=i.quantity%>, from <a href="/users/<%=i.user.username%>"><%=i.user.username%></a> in <%=i.user.location.name%></li>
+		<div><%=i.created_time%></div>
+		<%end%>
 	</ul>
 <%end%>

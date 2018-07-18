@@ -6,6 +6,8 @@ class Location < ActiveRecord::Base
 	has_many :user_items
 	has_many :items, through: :users
 
+	# delegations
+
 	def slug
 	  self.username.gsub(" ", "-")
 	end
